@@ -231,14 +231,14 @@ JWT_AUTH = {
 # Ceph rados settings
 CEPH_RADOS = {
     'CLUSTER_NAME': 'ceph',
-    'USER_NAME': 'client.obs',
+    'USER_NAME': 'client.cstbackup',
     'CONF_FILE_PATH': '/etc/ceph/ceph.conf',
-    'KEYRING_FILE_PATH': '/etc/ceph/ceph.client.obs.keyring',
-    'POOL_NAME': 'obs',
+    'KEYRING_FILE_PATH': '/etc/ceph/ceph.client.cstbackup.keyring',
+    'POOL_NAME': 'cstbackup',
 }
 
 # 日志配置
-LOGGING_FILES_DIR = '/var/log/evharbor'
+LOGGING_FILES_DIR = os.path.join('/var/log', os.path.basename(BASE_DIR))
 if not os.path.exists(LOGGING_FILES_DIR):
     os.makedirs(LOGGING_FILES_DIR, exist_ok=True)
 
