@@ -52,8 +52,8 @@ INSTALLED_APPS = [
     'buckets.apps.BucketsConfig',
     'users.apps.UsersConfig',
     'api',
-    'evcloud',
-    'docs',
+    # 'evcloud',
+    # 'docs',
     'vpn',
 ]
 
