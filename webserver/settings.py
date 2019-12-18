@@ -52,8 +52,8 @@ INSTALLED_APPS = [
     'buckets.apps.BucketsConfig',
     'users.apps.UsersConfig',
     'api',
-    'evcloud',
-    'docs',
+    # 'evcloud',
+    # 'docs',
     'vpn',
 ]
 
@@ -231,14 +231,14 @@ JWT_AUTH = {
 # Ceph rados settings
 CEPH_RADOS = {
     'CLUSTER_NAME': 'ceph',
-    'USER_NAME': 'client.obs',
+    'USER_NAME': 'client.cstbackup',
     'CONF_FILE_PATH': '/etc/ceph/ceph.conf',
-    'KEYRING_FILE_PATH': '/etc/ceph/ceph.client.obs.keyring',
-    'POOL_NAME': 'obs',
+    'KEYRING_FILE_PATH': '/etc/ceph/ceph.client.cstbackup.keyring',
+    'POOL_NAME': 'cstbackup',
 }
 
 # 日志配置
-LOGGING_FILES_DIR = '/var/log/evharbor'
+LOGGING_FILES_DIR = os.path.join('/var/log', os.path.basename(BASE_DIR))
 if not os.path.exists(LOGGING_FILES_DIR):
     os.makedirs(LOGGING_FILES_DIR, exist_ok=True)
 
@@ -383,8 +383,8 @@ THIRD_PARTY_APP_AUTH = {
     'SCIENCE_CLOUD': {
         # 'client_id': 000,
         # 'client_secret': 'xxx',
-        'client_home_url': 'http://obs.casearth.cn',
-        'client_callback_url': 'http://obs.casearth.cn/callback/', # 认证回调地址
+        'client_home_url': 'http://backup.cstcloud.cn/',
+        'client_callback_url': 'http://backup.cstcloud.cn/callback/', # 认证回调地址
         'login_url': 'https://passport.escience.cn/oauth2/authorize?response_type=code&theme=simple',
         'token_url': 'https://passport.escience.cn/oauth2/token',
         'logout_url': 'https://passport.escience.cn/logout'

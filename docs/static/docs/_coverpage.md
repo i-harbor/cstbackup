@@ -5,9 +5,9 @@
 
 
 [GitHub](https://github.com/i-harbor)
-[Get Started](#关于iharbor)
+[Get Started](#关于)
 <a href="/apidocs/" target="view_window">API文档</a>
-<a href="/">Goto iHarbor</a>
+<a href="/">去站点</a>
 
 <!-- 背景图片 -->
 

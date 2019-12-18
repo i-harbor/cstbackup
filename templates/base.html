@@ -42,9 +42,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img class="navbar-brand" src="{% static 'images/icon/logo_pic.png' %}">
                     <a class="navbar-brand" href="{% url 'buckets:bucket_view' %}">
-                        地球大数据科学工程对象云存储
+                        科学数据备份服务
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,7 +56,9 @@
     {#                            <li><a href="https://github.com/evharbor" target="view_window">Github</a></li>#}
     {#                            <li role="separator" class="divider"></li>#}
                                 <li><a href="{% url 'apidocs' %}" target="view_window" >API文档</a></li>
-                                <li><a href="{% url 'docs:docs' %}">帮助文档</a></li>
+{#                                <li><a href="{% url 'docs:docs' %}">帮助文档</a></li>#}
+                                <li><a href="{% url 'vpn:usage' %}">VPN使用说明</a></li>
+                                <li><a href="{% url 'buckets:ftp-usage' %}">FTP使用说明</a></li>
                             </ul>
                         </li>
                         <li>
@@ -69,7 +70,7 @@
                                         <ul class="dropdown-menu">
                                             <li><a href="{% url 'users:logout' %}">登出</a></li>
                                             <li><a href="{% url 'users:change_password' %}">修改密码</a></li>
-                                            <li><a href="{% url 'users:security' %}">安全凭证</a></li>
+{#                                            <li><a href="{% url 'users:security' %}">安全凭证</a></li>#}
                                             <li role="separator" class="divider"></li>
                                             {% if user.is_superuser %}
                                                 <li><a href="{% url 'admin:index' %}">后台管理</a></li>

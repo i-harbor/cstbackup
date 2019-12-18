@@ -232,6 +232,7 @@
 
     //art-template渲染模板注册过滤器
     template.defaults.imports.get_breadcrumb = get_breadcrumb;
+    template.defaults.imports.sizeFormat = sizeFormat;
 
     //
     // 创建存储桶按钮点击事件
@@ -864,7 +865,7 @@
                             <li><a href="" id="btn-path-item" bucket_name="{{ $data['bucket_name']}}"  dir_path="">{{ $data['bucket_name']}}</a></li>
                             {{set breadcrumbs = $imports.get_breadcrumb($data['dir_path'])}}
                             {{ each breadcrumbs }}
-                                <li><a href=""  id="btn-path-item" bucket_name="{{ $data['bucket_name']}}"  dir_path={{$value[1]}}>{{ $value[0] }}</a></li>
+                                <li><a href=""  id="btn-path-item" bucket_name="{{ $data['bucket_name']}}"  dir_path="{{$value[1]}}">{{ $value[0] }}</a></li>
                             {{/each}}
                         </ol>
                     </div>
@@ -907,7 +908,7 @@
                                         <a href="#" id="bucket-files-item-enter-file" download_url="{{$value.download_url}}">{{ $value.name }}</a>
                                     </td>
                                     <td>{{ $value.ult }}</td>
-                                    <td>{{ $value.si }}</td>
+                                    <td>{{ $imports.sizeFormat($value.si, "B") }}</td>
                                     <td>{{ $value.access_permission}}</td>
                                 {{/if}}
                                 {{ if !$value.fod }}
@@ -992,7 +993,7 @@
                 <a href="#" id="bucket-files-item-enter-file"  download_url="{{obj.download_url}}">{{ obj.name }}</a>
             </td>
             <td>{{ obj.ult }}</td>
-            <td>{{ obj.si }}</td>
+            <td>{{ $imports.sizeFormat(obj.si, "B") }}</td>
             <td>{{ obj.access_permission }}</td>
             <td>
                 <li class="dropdown btn">
