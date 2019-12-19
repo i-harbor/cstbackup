@@ -29,8 +29,8 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('vpn/', include('vpn.urls', namespace='vpn')),
     path('admin/', admin.site.urls),
-    path('apidocs/', get_swagger_view(title='iHarbor API'), name='apidocs'),
-    path('docs/', include('docs.urls', namespace='docs')),
+    # path('apidocs/', get_swagger_view(title='API'), name='apidocs'),
+    # path('docs/', include('docs.urls', namespace='docs')),
     path('callback/', kjy_login_callback, name='callback'),
 ]
 
