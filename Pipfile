@@ -16,7 +16,7 @@ django-debug-toolbar = "*"
 django-cors-headers = "==3.1.0"
 uwsgi = "==2.0.18"
 pyftpdlib = "*"
-djangorestframework = "==3.10.2"
+djangorestframework = "==3.11.2"
 
 [dev-packages]
 
